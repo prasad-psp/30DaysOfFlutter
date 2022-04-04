@@ -1,6 +1,6 @@
-import 'package:catlog_app/login_page.dart';
+import 'package:catlog_app/pages/home_page.dart';
+import 'package:catlog_app/pages/login_page.dart';
 import 'package:flutter/material.dart';
-import 'home_page.dart';
 
 void main() {
   runApp(
