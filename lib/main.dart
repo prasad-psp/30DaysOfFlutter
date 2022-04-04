@@ -9,7 +9,7 @@ void main() {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.lightGreen),
       themeMode: ThemeMode.light,
-      initialRoute: "/",
+      initialRoute: "/login",
       routes: {
         "/": (context) => HomePage(),
         "/login": (context) =>  LoginPage(),
