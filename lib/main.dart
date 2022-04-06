@@ -8,6 +8,7 @@ void main() {
     MaterialApp(
       title: "Catlog App",
       theme: ThemeData(primarySwatch: Colors.lightGreen),
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       initialRoute: "/",
       routes: {
