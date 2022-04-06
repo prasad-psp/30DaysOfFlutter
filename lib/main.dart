@@ -1,19 +1,19 @@
 import 'package:catlog_app/pages/home_page.dart';
 import 'package:catlog_app/pages/login_page.dart';
+import 'package:catlog_app/routes/myroutes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
     MaterialApp(
       title: "Catlog App",
-      debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.lightGreen),
       themeMode: ThemeMode.light,
-      initialRoute: "/login",
+      initialRoute: "/",
       routes: {
-        "/": (context) => HomePage(),
-        "/login": (context) =>  LoginPage(),
-        "/home": (context) => HomePage()
+        "/": (context) => LoginPage(),
+        MyRoutes.loginRoute: (context) =>  LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage()
       },
     ));
 }
