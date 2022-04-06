@@ -7,12 +7,12 @@ void main() {
   runApp(
     MaterialApp(
       title: "Catlog App",
-      theme: ThemeData(primarySwatch: Colors.lightGreen),
+      theme: ThemeData(primarySwatch: Colors.deepPurple),
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       initialRoute: "/",
       routes: {
-        "/": (context) => LoginPage(),
+        "/": (context) => HomePage(),
         MyRoutes.loginRoute: (context) =>  LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage()
       },
