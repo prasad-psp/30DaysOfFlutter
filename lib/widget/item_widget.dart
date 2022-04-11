@@ -15,7 +15,8 @@ class ItemWidget extends StatelessWidget {
           onTap: () {
             print("\$${item.name} pressed");
           },
-          leading: Image.network(item.imageUrl),
+          leading: SizedBox(
+              width: 50, height: 50, child: Image.network(item.imageUrl)),
           title: Text(item.name),
           subtitle: Text(item.desc),
           trailing: Text(
