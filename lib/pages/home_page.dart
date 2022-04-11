@@ -18,11 +18,7 @@ class HomePage extends StatelessWidget {
           maxWidth: 200,
           minWidth: 70
         ),
-        child: Container(
-          color: Colors.green,
-          width: 250,
-          height: 250,
-        ),
+        child: Text(context.runtimeType.toString()),
       ),
       drawer: const MyDrawer(),
     );
