@@ -34,11 +34,42 @@ class _HomePageState extends State<HomePage> {
         title: const Text("Catalog App"),
       ),
       body: (CatalogModel.items != null && CatalogModel.items!.isNotEmpty)
-          ? ListView.builder(
-              itemCount: CatalogModel.items!.length,
+          ? GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2),
               itemBuilder: (context, index) {
-                return ItemWidget(item: CatalogModel.items![index]);
+                final item = CatalogModel.items![index];
+                return Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      child: GridTile(
+                          header: Container(
+                            padding: const EdgeInsets.all(8),
+                            child: Text(
+                              item.name,
+                              style: const TextStyle(color: Colors.white),
+                            ),
+                            decoration: const BoxDecoration(
+                              color: Colors.deepPurple,
+                            ),
+                          ),
+                          footer: Container(
+                            padding: const EdgeInsets.all(8),
+                            child: Text(
+                              "\$${item.price.toString()}",
+                              style: const TextStyle(color: Colors.white),
+                            ),
+                            decoration: const BoxDecoration(
+                              color: Colors.black,
+                            ),
+                          ),
+                          child: Image.network(item.imageUrl))),
+                );
               },
+              itemCount: CatalogModel.items!.length,
             )
           : const Center(child: CircularProgressIndicator()),
       drawer: const MyDrawer(),
