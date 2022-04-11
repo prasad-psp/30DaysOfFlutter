@@ -10,8 +10,19 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Catalog App"),
       ),
-      body: Center(
-        child: Text("Welcome to $days Challenge"),
+      body: Container(
+        color: Colors.red,
+        constraints : BoxConstraints(
+          minHeight: 70,
+          maxHeight: 200,
+          maxWidth: 200,
+          minWidth: 70
+        ),
+        child: Container(
+          color: Colors.green,
+          width: 250,
+          height: 250,
+        ),
       ),
       drawer: const MyDrawer(),
     );
