@@ -1,4 +1,5 @@
 import 'package:catlog_app/models/catalog.dart';
+import 'package:catlog_app/routes/myroutes.dart';
 import 'dart:convert';
 import 'package:catlog_app/widget/mythemes.dart';
 import 'package:flutter/cupertino.dart';
@@ -38,7 +39,9 @@ class _HomePageState extends State<HomePage> {
         floatingActionButton: FloatingActionButton(
           backgroundColor: MyThemes.darkBluishColor,
           child: Icon(CupertinoIcons.cart),
-          onPressed: (() {}),
+          onPressed: (() {
+            Navigator.pushNamed(context, MyRoutes.cartRoute);
+          }),
         ),
         body: SafeArea(
           child: Container(
