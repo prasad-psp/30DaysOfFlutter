@@ -1,6 +1,7 @@
 import 'package:catlog_app/models/catalog.dart';
 import 'dart:convert';
 import 'package:catlog_app/widget/mythemes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -34,6 +35,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: MyThemes.creameColor,
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: MyThemes.darkBluishColor,
+          child: Icon(CupertinoIcons.cart),
+          onPressed: (() {}),
+        ),
         body: SafeArea(
           child: Container(
             padding: Vx.m32,
