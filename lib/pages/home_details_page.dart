@@ -52,7 +52,7 @@ class HomeDetailsPage extends StatelessWidget {
                         .color(MyThemes.darkBluishColor)
                         .bold
                         .make(),
-                    catalog.desc.text.xl.make(),
+                    catalog.desc.text.textStyle(context.captionStyle!).xl.make(),
                     10.heightBox,
                   ],
                 ).py64(),
