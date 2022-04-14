@@ -10,7 +10,7 @@ class HeadingWidgets extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        "Catalog App".text.bold.xl4.color(MyThemes.darkBluishColor).make(),
+        "Catalog App".text.bold.xl4.color(context.accentColor).make(),
         "Trending Products".text.xl.make(),
       ],
     );
