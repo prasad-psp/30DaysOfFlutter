@@ -12,13 +12,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Catlog App",
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme: MyThemes.lightTheme(context),
       darkTheme: MyThemes.darkTheme(context),
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
       routes: {
-        "/": (context) => HomePage(),
+        "/": (context) => LoginPage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
         MyRoutes.cartRoute: (context) => CartPage()

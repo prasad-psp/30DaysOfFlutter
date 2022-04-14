@@ -45,7 +45,7 @@ class CatalogItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            item.name.text.xl.color(MyThemes.darkBluishColor).bold.make(),
+            item.name.text.xl.color(context.accentColor).bold.make(),
             item.desc.text.textStyle(context.captionStyle!).make(),
             10.heightBox,
             ButtonBar(
@@ -57,7 +57,7 @@ class CatalogItem extends StatelessWidget {
                   child: "Add to cart".text.make(),
                   style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(MyThemes.darkBluishColor),
+                          MaterialStateProperty.all(context.theme.buttonColor),
                       shape: MaterialStateProperty.all(StadiumBorder())),
                 )
               ],
@@ -65,6 +65,6 @@ class CatalogItem extends StatelessWidget {
           ],
         ))
       ],
-    )).white.rounded.square(180).make().py16();
+    )).color(context.cardColor).rounded.square(180).make().py16();
   }
 }
