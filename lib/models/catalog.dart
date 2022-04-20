@@ -10,6 +10,13 @@ class CatalogModel {
   //   imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWspnuommpAzHJdnrxr3nOJQrmN4CJP3DYKw&usqp=CAU"
   // )
   // ];
+
+  // Get Item by ID
+  static Item getById(int id) =>
+      items!.firstWhere((element) => element.id == id, orElse: null);
+
+  // Get Item by position
+  static Item getByPosition(int position) => items![position];
 }
 
 class Item {
