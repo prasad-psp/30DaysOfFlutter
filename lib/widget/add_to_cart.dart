@@ -5,32 +5,28 @@ import 'package:velocity_x/velocity_x.dart';
 
 import '../models/catalog.dart';
 
-class AddToCart extends StatefulWidget {
+class AddToCart extends StatelessWidget {
   final Item catalog;
-  const AddToCart({
+  bool isAlreadyInCart = false;
+  
+  AddToCart({
     Key? key,
     required this.catalog,
   }) : super(key: key);
 
-  @override
-  State<AddToCart> createState() => _AddToCartState();
-}
-
-class _AddToCartState extends State<AddToCart> {
-  bool isAlreadyInCart = false;
 
   @override
   Widget build(BuildContext context) {
     final cart = CartModel();
-    isAlreadyInCart = cart.items.contains(widget.catalog);
+    isAlreadyInCart = cart.items.contains(catalog);
     return ElevatedButton(
       onPressed: () {
         if (!isAlreadyInCart) {
           isAlreadyInCart = true;
           final _catalog = CatalogModel();
           cart.catalog = _catalog;
-          cart.add(widget.catalog);
-          setState(() {});
+          cart.add(catalog);
+          // setState(() {});
         }
       },
       child: isAlreadyInCart ? Icon(Icons.done) : Icon(CupertinoIcons.cart_badge_plus),
