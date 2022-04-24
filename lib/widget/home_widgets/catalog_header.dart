@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:velocity_x/velocity_x.dart';
-import '../../widget/mythemes.dart';
 
 class HeadingWidgets extends StatelessWidget {
   const HeadingWidgets({Key? key}) : super(key: key);
