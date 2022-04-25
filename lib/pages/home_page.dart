@@ -17,7 +17,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final url = "https://api.jsonbin.io/b/6266260138be296761f7c566";
+  final url = "https://api.jsonbin.io/b/6266260138be296761f7c566/1";
 
   @override
   void initState() {
