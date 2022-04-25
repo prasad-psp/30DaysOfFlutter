@@ -5,11 +5,11 @@ import 'package:catlog_app/store/store.dart';
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../widget/home_widgets/catalog_header.dart';
 import '../widget/home_widgets/catalog_list.dart';
+import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
   @override
@@ -17,6 +17,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final url = "https://api.jsonbin.io/b/6266260138be296761f7c566";
+
   @override
   void initState() {
     super.initState();
@@ -25,7 +27,9 @@ class _HomePageState extends State<HomePage> {
 
   loadData() async {
     await Future.delayed(const Duration(seconds: 2));
-    var catalogJson = await rootBundle.loadString("assets/files/catalog.json");
+    // var catalogJson = await rootBundle.loadString("assets/files/catalog.json");
+    var response = await http.get(Uri.parse(url));
+    var catalogJson = response.body;
     var decodedData = jsonDecode(catalogJson);
     var productList = decodedData["products"];
     CatalogModel.items =
